@@ -1,28 +1,29 @@
 @extends('auth.main')
-@section('titulo', 'Login')
-@section('tituloContenido', 'Acceder')
+
+
+
 
 @section('content')
-<form action="{{ route('login') }}" method="POST">
+<form  method="POST" action="{{ route('login') }}">
     <h1>
         Acceder
     </h1>
     @csrf
     <div class="form-group has-feedback">
-        <input autofocus="" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} " id="name" name="name" placeholder="Nombre de usuario" required="" type="name" value="{{ old('name') }}">
+        <input id="email" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('email') }}" required autofocus placeholder="Usuario">
             <span class="fa fa-user form-control-feedback">
             </span>
-            @if ($errors->has('name'))
+            @if ($errors->has('username'))
             <span class="invalid-feedback">
                 <strong>
-                    {{ $errors->first('name') }}
+                    {{ $errors->first('username') }}
                 </strong>
             </span>
             @endif
         </input>
     </div>
     <div class="form-group has-feedback">
-        <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" name="password" placeholder="Contraseña" required="" type="password">
+        <input  id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Contraseña">
             <span class="fa fa-lock form-control-feedback" ">
             </span>
             @if ($errors->has('password'))
@@ -50,4 +51,6 @@
     </div>
     
 </form>
+
+
 @endsection

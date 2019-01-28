@@ -18,6 +18,16 @@
         </div>
 
         <div class="form-group has-feedback">
+                <input id="name" type="text" placeholder="Nombre Usuario" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('name') }}" required autofocus>
+                <span class="fa fa-user form-control-feedback"></span>
+                @if ($errors->has('username'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('username') }}</strong>
+                    </span>
+                @endif 
+        </div>
+
+        <div class="form-group has-feedback">
                 <input id="email" type="email" placeholder="ejemplo@gmail.com" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                 <span class="fa fa-envelope form-control-feedback"></span>
                 @if ($errors->has('email'))

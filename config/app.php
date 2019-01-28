@@ -178,7 +178,7 @@ return [
          * Package Service Providers personales...
          */
         Collective\Html\HtmlServiceProvider::class,
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        
         App\Providers\ValidatorServiceProvider::class,
     ],
 
